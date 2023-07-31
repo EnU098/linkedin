@@ -1,0 +1,1 @@
+create table nodir(id serial primary key )
