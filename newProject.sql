@@ -34,3 +34,37 @@ create table users(
   gender gender
   );
 /*--------------------N.N-------------------*/
+
+
+/*--------------E.Nodir--------------*/
+
+create table post(
+                     id serial primary key,
+                     user_id int references users(id),
+                     context text,
+                     photo varchar,
+                     date date
+);
+
+create table post_like(
+                          id serial primary key ,
+                          user_id int references users(id),
+                          post_id int references post(id)
+);
+
+create table comment(
+                        id serial primary key ,
+                        user_id int references users(id),
+                        text varchar,
+                        post_id int references post(id),
+                        date_posted date,
+                        reply_id int references users(id)
+);
+
+create table comment_like(
+                             id serial primary key ,
+                             user_id int references users(id),
+                             comment_id int references comment(id)
+);
+
+/*--------------E.Nodir--------------*/
