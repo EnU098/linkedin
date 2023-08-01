@@ -22,7 +22,6 @@ create table job(
     location varchar,
     data_posted date
 );
-
 create table users(
   id serial primary key ,
   email varchar,
@@ -33,5 +32,5 @@ create table users(
   date_od_brith date,
   country varchar,
   gender gender
-);
+  );
 /*--------------------N.N-------------------*/
