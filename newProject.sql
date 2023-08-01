@@ -22,6 +22,13 @@ create table job(
     location varchar,
     data_posted date
 );
+
+<<<<<<<<< Temporary merge branch 1
+
+
+create table comment(
+    id serial primary key
+=========
 create table users(
   id serial primary key ,
   email varchar,
@@ -32,7 +39,8 @@ create table users(
   date_od_brith date,
   country varchar,
   gender gender
-  );
+>>>>>>>>> Temporary merge branch 2
+);
 /*--------------------N.N-------------------*/
 
 
@@ -68,3 +76,20 @@ create table comment_like(
 );
 
 /*--------------E.Nodir--------------*/
+
+------------------Davron-------------------
+
+create table connections(
+    id serial primary key ,
+    user1 int references users(id),
+    user2 int references users(id)
+);
+
+create table endorses(
+    id serial primary key ,
+    user1 int references users(id),
+    user2 int references users(id),
+    date_posted date
+);
+
+------------------Davron-------------------
