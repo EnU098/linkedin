@@ -22,4 +22,16 @@ create table job(
     location varchar,
     data_posted date
 );
+
+create table users(
+  id serial primary key ,
+  email varchar,
+  password varchar,
+  first_name varchar,
+  last_name varchar,
+  photo_link varchar,
+  date_od_brith date,
+  country varchar,
+  gender gender
+);
 /*--------------------N.N-------------------*/
