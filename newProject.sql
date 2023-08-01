@@ -35,3 +35,20 @@ create table users(
   gender gender
 );
 /*--------------------N.N-------------------*/
+
+------------------Davron-------------------
+
+create table connections(
+    id serial primary key ,
+    user1 int references users(id),
+    user2 int references users(id)
+);
+
+create table endorses(
+    id serial primary key ,
+    user1 int references users(id),
+    user2 int references users(id),
+    date_posted date
+);
+
+------------------Davron-------------------
