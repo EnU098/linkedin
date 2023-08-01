@@ -1,4 +1,5 @@
 /*           E_Nodir          */
+
 create or replace function add_post(
     user_id int,
     context text,
@@ -64,4 +65,5 @@ Exception
     when others then return false;
 end;
 $$ language plpgsql;
+
 /*           E_Nodir          */
