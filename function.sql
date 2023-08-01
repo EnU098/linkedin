@@ -64,5 +64,4 @@ Exception
     when others then return false;
 end;
 $$ language plpgsql;
-
 /*           E_Nodir          */
