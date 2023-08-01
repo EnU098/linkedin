@@ -69,10 +69,11 @@ create or replace function add_skill(i_name varchar)
 as
 $$
 BEGIN
-  insert into skill(name) values (i_name);
-  return true;
+    insert into skill(name) values (i_name);
+    return true;
 
-  Exception when others then return true;
+Exception
+    when others then return true;
 end;
 $$;
 
