@@ -22,4 +22,10 @@ create table job(
     location varchar,
     data_posted date
 );
+
+
+
+create table comment(
+    id serial primary key
+);
 /*--------------------N.N-------------------*/
