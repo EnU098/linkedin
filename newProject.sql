@@ -26,6 +26,8 @@ create table job
     location    varchar,
     data_posted date
 );
+
+create type gender as ENUM('f','m');
 create table users(
   id serial primary key ,
   email varchar,
@@ -91,5 +93,38 @@ create table endorses(
     user2 int references users(id),
     date_posted date
 );
-
 ------------------Davron-------------------
+
+/*---------------N.N------------------------*/
+create table message(
+  id serial primary key,
+  sender_user_id int references users(id),
+  resiver_user_id int references users(id),
+  message_body varchar
+);
+create table user_message(
+  user_id int references users(id),
+  message_id int references message(id)
+);
+create table experience(
+  id serial primary key ,
+  user_id int references users(id),
+  start_date date ,
+  end_date date,
+  company_id int references company(id),
+  position_id int references position(id)
+);
+create table skill(
+    id serial primary key ,
+    name varchar
+);
+create table user_skills(
+    user_id int references users(id),
+    skill_id int references skill(id)
+);
+
+create table endorses_skill(
+    endorses_id int references endorses(id),
+    skill_id int references skill(id)
+);
+/*---------------N.N------------------------*/
